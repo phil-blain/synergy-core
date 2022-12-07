@@ -21,4 +21,5 @@
     <?define QtPluginsPath="$(var.QtPath)\plugins" ?>
     <?define OpenSSLPath="$(var.ExtPath)\openssl\windows\$(var.Platform)" ?>
     <?define OpenSSLBinPath="$(var.OpenSSLPath)\bin" ?>
+    <?define WinSdkVerBinPath="@WINDOWS_SDK_VER_BIN_PATH@" ?>
 </Include>

@@ -111,7 +111,7 @@
 				<File Source="$(var.BinPath)\libGLESv2d.dll"/>
 				<File Source="$(var.BinPath)\libEGLd.dll"/>
 				<!-- Hacky -->
-				<File Source="C:\Program Files (x86)\Windows Kits\10\bin\$(var.Platform)\ucrt\ucrtbased.dll"/>
+				<File Source="$(var.WinSdkVerBinPath)\$(var.Platform)\ucrt\ucrtbased.dll"/>
 				<?else ?>
 				<File Source="$(var.BinPath)\Qt5Core.dll"/>
 				<File Source="$(var.BinPath)\Qt5Gui.dll"/>
@@ -125,7 +125,11 @@
 		</ComponentGroup>
 		<ComponentGroup Directory="QTStylesDir" Id="ProductQtStylesComponents">
 			<Component Guid="96E0F8D8-64FD-4CE8-94D1-F6EDCBBB4995" Id="Styles">
+				<?if $(var.Configuration) = "Debug" ?>
+				<File Id="qwindowsvistastyle" Source="$(var.BinPath)\styles\qwindowsvistastyled.dll"/>
+				<?else ?>
 				<File Id="qwindowsvistastyle" Source="$(var.BinPath)\styles\qwindowsvistastyle.dll"/>
+				<?endif ?>
 			</Component>
 		</ComponentGroup>
 		<ComponentGroup Directory="PlatformsDir" Id="ProductQtPluginComponents">
